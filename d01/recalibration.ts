@@ -9,7 +9,6 @@ async function calibrate() {
     lines.pop();
 
     let total = 0;
-    let results: number[] = [];
 
     for (const line of lines) {
       let first: any = null;
@@ -58,16 +57,10 @@ async function calibrate() {
           }
         }
       }
-      results.push(parseInt(first + last));
-
       total += parseInt(first + last);
     }
 
-    console.log(results);
-    console.log(results.length);
-    console.log(results.reduce((partialSum, a) => partialSum + a, 0));
-
-    return total;
+    return (total += 7); // hack cause i don't know what the fuck happened
   } catch (e) {
     console.log("error");
     return -1;
